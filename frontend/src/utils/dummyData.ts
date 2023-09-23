@@ -6,7 +6,7 @@ export const projectList = [
       frontend: "React, HTML, CSS",
       backend: "Java, Python Django, Flask",
       database: "MySQL, MongoDB, Postgres",
-      infrastructure: "AWS, Azure OCR, Apache, Docker",
+      infrastructure: "",
     },
   },
   {
