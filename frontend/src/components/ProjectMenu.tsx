@@ -43,14 +43,14 @@ export const ProjectMenu = () => {
               projects?.map((project: Project) => {
                 return <ProjectCard key={project.title} project={project} />;
               })
-            ) : (
+            ) : !isLoading ? (
               <div className="px-8 mx-auto text-center">
                 <p className="text-red-600 text-lg font-semibold">
                   ! No matching projects found.
                 </p>
                 <span>Please try another search query.</span>
               </div>
-            )}
+            ) : null}
           </div>
         )}
       </div>
