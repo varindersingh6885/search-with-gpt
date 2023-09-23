@@ -7,35 +7,44 @@ type ProjectCardProps = {
 export const ProjectCard = (props: ProjectCardProps) => {
   const { project } = props;
   return (
-    <div className="border rounded-md py-4 px-4 m-2 min-w-[250px] grow max-w-[350px] shadow-md hover:border-gray-400 hover:shadow-lg cursor-pointer">
-      <div className="my-1 border-b-2 pb-2">
-        <p className="text-gray-400">Title</p>
-        <h2 className="font-bold">{project?.title}</h2>
-      </div>
-      <div className="my-1">
-        <p className="text-gray-400">Technologies</p>
-        <h2 className="">{project?.technologies || "---"}</h2>
+    <div className="border rounded-md py-4 px-4 w-full min-w-[250px] bg-white shadow-md hover:border-gray-400 hover:shadow-lg cursor-pointer">
+      <div className="my-1 border-b-2 border-dashed pb-2">
+        <p className="text-gray-400 text-sm">Title</p>
+        <h2 className="font-bold text-green-delight text-xl">
+          {project?.title}
+        </h2>
       </div>
 
-      <div className="my-1">
-        <p className="text-gray-400">Skillset:</p>
-        <div className="pl-2">
-          <div className="my-1">
-            <p className="text-gray-400">Frontend</p>
-            <h2 className="">{project?.skills?.frontend || "---"}</h2>
-          </div>
-          <div className="my-1">
-            <p className="text-gray-400">Backend</p>
-            <h2 className="">{project?.skills?.backend || "---"}</h2>
-          </div>
-          <div className="my-1">
-            <p className="text-gray-400">Database</p>
-            <h2 className="">{project?.skills?.database || "---"}</h2>
-          </div>
-          <div className="my-1">
-            <p className="text-gray-400">Infrastructure</p>
-            <h2 className="">{project?.skills?.infrastructure || "---"}</h2>
-          </div>
+      <div className="my-1 p-1">
+        <div className="my-1">
+          <p className="text-gray-400">Technologies</p>
+          <span className="pl-2 font-semibold">
+            {project?.technologies || "---"}
+          </span>
+        </div>
+        <div className="my-1">
+          <p className="text-gray-400">Frontend Skills</p>
+          <span className="pl-2 font-semibold">
+            {project?.skills?.frontend || "---"}
+          </span>
+        </div>
+        <div className="my-1">
+          <p className="text-gray-400">Backend Skills</p>
+          <span className="pl-2 font-semibold">
+            {project?.skills?.backend || "---"}
+          </span>
+        </div>
+        <div className="my-1">
+          <p className="text-gray-400">Database Skills</p>
+          <span className="pl-2 font-semibold">
+            {project?.skills?.database || "---"}
+          </span>
+        </div>
+        <div className="my-1">
+          <p className="text-gray-400">Infrastructure Skills</p>
+          <span className="pl-2 font-semibold">
+            {project?.skills?.infrastructure || "---"}
+          </span>
         </div>
       </div>
     </div>
