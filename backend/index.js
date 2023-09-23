@@ -2,12 +2,15 @@ import express from "express";
 import OpenAI from "openai";
 import cors from "cors";
 import dotenv from "dotenv";
+import { dbConnect } from "./db/db.js";
 import { projectList } from "./utils/dummyData.js";
 
 dotenv.config();
 const app = express();
 
 app.use(cors());
+
+dbConnect();
 
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_KEY,
