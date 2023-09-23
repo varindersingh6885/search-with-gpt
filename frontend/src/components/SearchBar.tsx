@@ -18,7 +18,6 @@ export const SearchBar = (props: SearchBarProps) => {
   const handleClearSearchText = () => {
     if (searchText) {
       setSearchText("");
-      props.onSubmit();
     }
   };
 
