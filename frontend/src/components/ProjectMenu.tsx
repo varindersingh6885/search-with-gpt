@@ -45,7 +45,7 @@ export const ProjectMenu = () => {
           </div>
         )}
 
-        {!isError && !isLoading && projects.length === 0 && (
+        {!isError && !isLoading && projects?.length === 0 && (
           <div className="px-8 mx-auto text-center">
             <p className="text-red-600 text-lg font-semibold">
               ! No Results found.

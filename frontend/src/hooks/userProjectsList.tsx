@@ -5,7 +5,7 @@ export const useProjectList = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [isError, setIsError] = useState(false);
   const [error, setError] = useState(null);
-  const [projects, setProjects] = useState([]);
+  const [projects, setProjects] = useState(null);
 
   const fetchProjects = async (searchText?: string) => {
     setIsLoading(true);
