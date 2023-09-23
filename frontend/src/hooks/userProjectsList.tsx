@@ -22,6 +22,10 @@ export const useProjectList = () => {
 
       const data = await apiResult.json();
 
+      if (!apiResult.ok) {
+        throw new Error(data?.message || apiResult.statusText);
+      }
+
       setProjects(data.data);
       setIsLoading(false);
     } catch (error: any) {

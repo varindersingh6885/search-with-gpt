@@ -37,20 +37,20 @@ export const ProjectMenu = () => {
           </div>
         )}
 
-        {!isError && (
+        {!isError && !isLoading && projects?.length > 0 && (
           <div className="px-8 mx-auto grid grid-flow-row gap-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 2xl:grid-cols-4">
-            {projects?.length > 0 ? (
-              projects?.map((project: Project) => {
-                return <ProjectCard key={project.title} project={project} />;
-              })
-            ) : !isLoading ? (
-              <div className="px-8 mx-auto text-center">
-                <p className="text-red-600 text-lg font-semibold">
-                  ! No matching projects found.
-                </p>
-                <span>Please try another search query.</span>
-              </div>
-            ) : null}
+            {projects?.map((project: Project) => {
+              return <ProjectCard key={project.title} project={project} />;
+            })}
+          </div>
+        )}
+
+        {!isError && !isLoading && projects.length === 0 && (
+          <div className="px-8 mx-auto text-center">
+            <p className="text-red-600 text-lg font-semibold">
+              ! No Results found.
+            </p>
+            <span>Please try again with different search query.</span>
           </div>
         )}
       </div>
