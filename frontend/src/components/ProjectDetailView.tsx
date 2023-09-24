@@ -15,7 +15,7 @@ export const ProjectDetailView = (props: ProjectDetailViewProps) => {
       projectDetailViewContext?.setProject(null);
   };
   return (
-    <div className="border rounded-md py-4 px-4 w-full min-w-[250px] h-[90%] overflow-auto bg-white shadow-md">
+    <div className="border rounded-md py-4 px-4 w-full min-w-[250px] h-[100%] overflow-auto bg-white shadow-md">
       <div className="flex justify-between items-start">
         <div className="my-1 border-b-2 border-dashed pb-2">
           <p className="text-gray-400 text-sm">Title</p>

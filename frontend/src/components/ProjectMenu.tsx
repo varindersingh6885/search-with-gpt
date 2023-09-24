@@ -5,10 +5,13 @@ import { SearchBar } from "./SearchBar.js";
 import { useProjectList } from "../hooks/userProjectsList.js";
 import { Loader } from "./Loader.js";
 import { Dialog } from "./Dialog.js";
+import { useReload } from "../hooks/useReload.js";
 
 export const ProjectMenu = () => {
   const { projects, fetchProjects, isLoading, isError, error } =
     useProjectList();
+
+  const { reloadApplication } = useReload();
 
   useEffect(() => {
     fetchProjects();
@@ -34,6 +37,13 @@ export const ProjectMenu = () => {
           <div className="px-8 mx-auto text-center">
             <p className="text-red-600 text-lg font-semibold">! {error}</p>
             <span>Please try again.</span>
+
+            <button
+              className="mx-2 underline text-blue-500"
+              onClick={reloadApplication}
+            >
+              Refresh application.
+            </button>
           </div>
         )}
 
@@ -51,6 +61,12 @@ export const ProjectMenu = () => {
               ! No Results found.
             </p>
             <span>Please try again with different search query.</span>
+            <button
+              className="mx-2 underline text-blue-500"
+              onClick={reloadApplication}
+            >
+              Refresh application.
+            </button>
           </div>
         )}
       </div>
