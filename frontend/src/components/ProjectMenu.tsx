@@ -33,7 +33,7 @@ export const ProjectMenu = () => {
         {isError && (
           <div className="px-8 mx-auto text-center">
             <p className="text-red-600 text-lg font-semibold">! {error}</p>
-            <span>Please try again</span>
+            <span>Please try again.</span>
           </div>
         )}
 

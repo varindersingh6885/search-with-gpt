@@ -2,28 +2,34 @@ import { useContext } from "react";
 import { Project } from "../utils/types";
 import { ProjectDetailViewModalContext } from "../hooks/useProjectDetailViewContext";
 
-type ProjectCardProps = {
+type ProjectDetailViewProps = {
   project: Project;
 };
 
-export const ProjectCard = (props: ProjectCardProps) => {
+export const ProjectDetailView = (props: ProjectDetailViewProps) => {
   const { project } = props;
   const projectDetailViewContext = useContext(ProjectDetailViewModalContext);
 
   const updateProjectDetailViewModal = () => {
     projectDetailViewContext.setProject &&
-      projectDetailViewContext?.setProject(props.project);
+      projectDetailViewContext?.setProject(null);
   };
   return (
-    <div
-      className="border rounded-md py-4 px-4 w-full min-w-[250px] bg-white shadow-md hover:border-gray-400 hover:shadow-lg cursor-pointer"
-      onClick={updateProjectDetailViewModal}
-    >
-      <div className="my-1 border-b-2 border-dashed pb-2">
-        <p className="text-gray-400 text-sm">Title</p>
-        <h2 className="font-bold text-green-delight text-xl">
-          {project?.title}
-        </h2>
+    <div className="border rounded-md py-4 px-4 w-full min-w-[250px] h-[90%] overflow-auto bg-white shadow-md">
+      <div className="flex justify-between items-start">
+        <div className="my-1 border-b-2 border-dashed pb-2">
+          <p className="text-gray-400 text-sm">Title</p>
+          <h2 className="font-bold text-green-delight text-xl">
+            {project?.title}
+          </h2>
+        </div>
+        <button
+          className="py-2 px-4 border rounded-lg font-bold bg-gray-100 hover:bg-gray-200"
+          title="close"
+          onClick={updateProjectDetailViewModal}
+        >
+          X
+        </button>
       </div>
 
       <div className="my-1 p-1">
