@@ -7,3 +7,5 @@ Given a list of project descriptions. Create an application that can be used to 
 **Solution:**
 
 Developed an application where I have integrated `ChatGPT` from `OpenAI` to pass the list of projects as a context. And then performing search queries as a prompt to ChatGPT to find the relevant projects.
+
+Click here to open the application [Search with GPT](https://search-with-gpt.netlify.app/).
